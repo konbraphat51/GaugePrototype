@@ -9,16 +9,12 @@ public class Gauge : MonoBehaviour
     //where Fill comes until
     private float showingRatio = 0f;
 
-    private float excellentWidthRatio = 0.1f;
-    private float excellentCenterRatio = 0.5f;
-
     [SerializeField] private GameObject rightEdgeObject;
     private float rightEdge;
     [SerializeField] private GameObject leftEdgeObject;
     private float leftEdge;
 
     [SerializeField] private GameObject reachedMovingMask;
-    [SerializeField] private GameObject excellentRectMask;
 
     [Tooltip("Reverse")]
     [SerializeField] public bool goingRight;
@@ -33,11 +29,7 @@ public class Gauge : MonoBehaviour
     /// this must be called
     /// </summary>
     /// <param name="showingRatio"></param>
-    /// <param name="excellentWidthRatio"></param>
-    /// <param name="excellentCenterRatio"></param>
-    public void Initialize(float showingRatio,
-        float excellentWidthRatio,
-        float excellentCenterRatio)
+    public void Initialize(float showingRatio)
     {
         //initialize variable
         this.showingRatio = showingRatio;
@@ -47,9 +39,6 @@ public class Gauge : MonoBehaviour
 
         //Move to start point
         Animate();
-
-        //edit excellent zone rect
-        SetExcellentAreaRect(excellentWidthRatio, excellentCenterRatio);
     }
 
     /// <summary>
@@ -83,15 +72,7 @@ public class Gauge : MonoBehaviour
         leftEdge = leftEdgeObject.transform.position.x;
     }
 
-    private void SetExcellentAreaRect(float widthRatio, float centerRatio)
-    {
-        float centerPosX = GetHorizontalPosition(centerRatio);
-
-        excellentRectMask.transform.localScale = new Vector2(widthRatio, excellentRectMask.transform.localScale.y);
-        excellentRectMask.transform.position = new Vector2(centerPosX, excellentRectMask.transform.position.y);
-    }
-
-    private float GetHorizontalPosition(float ratio)
+    protected float GetHorizontalPosition(float ratio)
     {
         float output = 0f;
 

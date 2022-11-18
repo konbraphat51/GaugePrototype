@@ -6,7 +6,8 @@ using UnityEngine;
 //Press space to increase the displaying ratio
 public class Demonstrator : MonoBehaviour
 {
-    [SerializeField] private Gauge gauge;
+    [SerializeField] private GaugeWithExcellentArea gauge1;
+    [SerializeField] private Gauge gauge2;
 
     [SerializeField] float initialRatio = 0f;
     private float ratio = 0f;
@@ -21,9 +22,10 @@ public class Demonstrator : MonoBehaviour
         ratio = initialRatio;
 
         //must initialize
-        gauge.Initialize(ratio,
+        gauge1.Initialize(ratio,
             excellentWidthRatio,
             excellentCenterRatio);
+        gauge2.Initialize(ratio);
     }
 
     private void Update()
@@ -38,6 +40,7 @@ public class Demonstrator : MonoBehaviour
     private void Increase()
     {
         ratio += fillSpeed;
-        gauge.SetRatio(ratio);
+        gauge1.SetRatio(ratio);
+        gauge2.SetRatio(ratio);
     }
 }

@@ -314,9 +314,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8234856863074074560}
   - component: {fileID: 8234856863074074575}
-  - component: {fileID: 8234856863074074561}
+  - component: {fileID: 6871006589897180053}
   m_Layer: 0
-  m_Name: GaugeSlot
+  m_Name: GaugeWithExcellent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -398,7 +398,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8234856863074074561
+--- !u!114 &6871006589897180053
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -407,14 +407,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 8234856863074074574}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7112860ad503fca4d9785b7ebca28b60, type: 3}
+  m_Script: {fileID: 11500000, guid: 55735984bd0d374488a10933842d3c8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rightEdgeObject: {fileID: 8234856861790299440}
   leftEdgeObject: {fileID: 8234856863482839534}
   reachedMovingMask: {fileID: 8234856861955886851}
-  excellentRectMask: {fileID: 8234856862202618964}
   goingRight: 0
+  excellentRectMask: {fileID: 8234856862202618964}
 --- !u!1 &8234856863482839534
 GameObject:
   m_ObjectHideFlags: 0
